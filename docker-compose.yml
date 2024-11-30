@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgresql:17.2
+    ports:
+      - "5432:5432"
+    networks:
+      - devquest-network
+    environment:
+      POSTGRES_USER: bagrielz
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: devquest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+
+networks:
+  devquest-network:
+    driver: bridge
