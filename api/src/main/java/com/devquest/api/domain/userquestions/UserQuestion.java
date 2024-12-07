@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity // Representa as entradas da tabela como objetos
-@Table(name = "users") // Mapeia para o nome da tabela
+@Table(name = "user_questions") // Mapeia para o nome da tabela
 @Setter
 @Getter
 @NoArgsConstructor
