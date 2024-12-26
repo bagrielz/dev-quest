@@ -13,6 +13,20 @@ services:
     volumes:
       - postgres_devquest:/var/lib/postgresql/data
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: devquest-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/devquest
+      SPRING_DATASOURCE_USERNAME: bagrielz
+      SPRING_DATASOURCE_PASSWORD: password
+
 volumes:
   postgres_devquest:
 
